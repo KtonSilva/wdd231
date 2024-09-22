@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio page for Kleyton L Silva">
+    <meta name="author" content="Kleyton L Silva">
+    <title>Kleyton L Silva - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script defer src="scripts/script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="profile">
+                <img src="images/profile.jpg" alt="Profile image">
+                <h1>Kleyton L Silva</h1>
+            </div>
+            <button class="hamburger">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-work">
+            <h2>Course Work</h2>
+            <ul>
+                <li></li> <!-- Fill these with actual course details -->
+                <li></li>
+            </ul>
+        </section>
+        <section class="location">
+            <h2>Recife, Brazil</h2>
+            <img src="images/recife.jpg" alt="Marco Zero">
+            <p>Marco Zero</p>
+        </section>
+    </main>
+
+    <section class="certificate">
+        <h2>Web and Computer Programming Certificate</h2>
+        <div class="filter-buttons">
+            <button id="showAll">All</button>
+            <button id="showCSE">CSE</button>
+            <button id="showWDD">WDD</button>
+        </div>
+        <div id="course-list">
+            <!-- Course cards will be dynamically populated here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Kleyton L Silva &nbsp; <span>Recife, Brazil</span></p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
