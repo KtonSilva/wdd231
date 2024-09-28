@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recife Chamber of Commerce Directory Page">
+    <meta name="author" content="Kleyton L Silva">
+    <meta property="og:title" content="Recife Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/chamber.jpg">
+    <meta property="og:url" content="https://ktonsilva.github.io/wdd231/chamber/">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Chamber of Commerce Directory</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html" class="active">Business Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Our Members</h1>
+        <div class="view-toggle">
+            <button id="grid-view">Grid View</button>
+            <button id="list-view">List View</button>
+        </div>
+        <section id="directory" class="grid">
+            <!-- Member cards will be dynamically loaded here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Timbuktu Chamber of Commerce | 10 Rue De La Paix | Timbuktu, Mali</p>
+        <p>&copy; <span id="currentYear"></span> Timbuktu Chamber of Commerce</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
