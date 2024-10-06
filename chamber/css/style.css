@@ -91,6 +91,17 @@ button {
     max-width: 300px; /* Limit card width */
 }
 
+/* Company Spotlights Styling */
+.spotlight-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px auto; /* Center card */
+    max-width: 300px; /* Limit card width */
+}
+
 /* List View Styling */
 #directory.list {
     display: block;
@@ -98,7 +109,8 @@ button {
     text-align: center; /* Center content in list view */
 }
 
-.member-card img {
+.member-card img,
+.spotlight-card img {
     max-width: 100%;
     border-radius: 8px;
 }
@@ -121,4 +133,12 @@ footer p {
 .current-events, .weather, .spotlights {
     text-align: center; /* Center align text in sections */
     padding: 20px;
+}
+
+/* Company Spotlights Section */
+.spotlight-container {
+    display: flex; /* Use flexbox to align items */
+    justify-content: center; /* Center align spotlight cards */
+    gap: 20px; /* Space between spotlight cards */
+    flex-wrap: wrap; /* Allow wrapping of items */
 }
