@@ -29,7 +29,7 @@ header .menu li a.active {
     text-decoration: underline;
 }
 
-h1 {
+h1, h2, h3 {
     text-align: center;
     margin-top: 20px;
 }
@@ -45,32 +45,25 @@ button {
     cursor: pointer;
 }
 
-/* Grid View Styling */
 #directory.grid {
-    display: flex; /* Change to flexbox */
-    flex-wrap: wrap; /* Allow wrapping of items */
-    justify-content: center; /* Center items */
-    gap: 20px; /* Space between items */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center; /* Center items in grid view */
+}
+
+#directory.list {
+    display: block;
     padding: 20px;
 }
 
-/* Member Card Styling */
 .member-card {
     background-color: white;
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
     border-radius: 8px;
-    margin: 0 auto; /* Center card */
-    flex-basis: calc(25% - 20px); /* Maximum 4 cards per row with spacing */
-    max-width: 300px; /* Limit card width */
-}
-
-/* List View Styling */
-#directory.list {
-    display: block;
-    padding: 20px;
-    text-align: center; /* Center content in list view */
 }
 
 .member-card img {
@@ -78,14 +71,48 @@ button {
     border-radius: 8px;
 }
 
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the hero image */
+}
+
+.call-to-action, .current-events, .weather, .spotlights {
+    text-align: center; /* Center align text in sections */
+    padding: 20px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+#weather-info {
+    margin: 0 auto; /* Center the weather info */
+}
+
+.spotlight-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center; /* Center align text in spotlight cards */
+}
+
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
-    position: relative; /* Ensure footer stays at the bottom */
-    bottom: 0; /* Stick to the bottom */
-    width: 100%; /* Full width */
 }
 
 footer p {
