@@ -47,11 +47,11 @@ button {
 
 /* Grid View Styling */
 #directory.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex; /* Change to flexbox */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    justify-content: center; /* Center items */
+    gap: 20px; /* Space between items */
     padding: 20px;
-    justify-items: center; /* Center items in the grid */
 }
 
 /* List View Styling */
