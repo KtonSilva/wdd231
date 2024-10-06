@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         spotlightContainer.innerHTML = members.map(member => `
             <div class="spotlight-card">
                 <h3>${member.name}</h3>
-                <img src="images/${member.image}" alt="${member.name}">
+                <img src="${member.image}" alt="${member.name}">
                 <p><strong>Phone:</strong> ${member.phone}</p>
                 <p><strong>Address:</strong> ${member.address}</p>
                 <p><strong>Membership Level:</strong> ${member.membershipLevel}</p>
