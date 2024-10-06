@@ -3,7 +3,7 @@
         "name": "Esmeraldas Mining Services",
         "address": "Calle 1 #2-3, Muzo, Boyacá",
         "phone": "+57 321 456 7890",
-        "website": "https://muzocolombia.co",
+        "website": "https://muzocolombia.com",
         "membershipLevel": "Gold",
         "image": "assets/esmeraldas.jpg"
     },
@@ -27,9 +27,32 @@
         "name": "Esmeralda Cacao",
         "address": "Calle 10 #11-12, Muzo, Boyacá",
         "phone": "+57 324 789 0123",
-        "website": "https://muzocolombia.ca",
+        "website": "https://muzocolombia.com",
         "membershipLevel": "Bronze",
         "image": "assets/esmeralda_cacao.jpg"
+    },
+    {
+        "name": "Timbuktu Digital Agency",
+        "address": "Rue 12 #15-20, Timbuktu, Mali",
+        "phone": "+223 654 321 987",
+        "website": "https://timbuktudigital.com",
+        "membershipLevel": "Gold",
+        "image": "assets/timbuktu_digital.jpg"
+    },
+    {
+        "name": "Sahara Consulting Group",
+        "address": "Avenue des Nations, Timbuktu, Mali",
+        "phone": "+223 789 012 345",
+        "website": "https://saharaconsulting.com",
+        "membershipLevel": "Silver",
+        "image": "assets/sahara_consulting.jpg"
+    },
+    {
+        "name": "Atlas Logistics",
+        "address": "Calle 5 #9-15, Timbuktu, Mali",
+        "phone": "+223 321 654 987",
+        "website": "https://atlaslogistics.com",
+        "membershipLevel": "Bronze",
+        "image": "assets/atlas_logistics.jpg"
     }
 ]
-

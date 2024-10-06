@@ -1,9 +1,15 @@
 /* Normalize.css will go here */
+html, body {
+    height: 100%; /* Makes the body fill the full height of the window */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column; /* Aligns content in a column */
 }
 
 header {
@@ -45,11 +51,16 @@ button {
     cursor: pointer;
 }
 
+main {
+    flex: 1; /* Makes the main occupy the remaining space */
+}
+
 #directory.grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
+    justify-items: center; /* Centers the items in the grid */
 }
 
 #directory.list {
@@ -63,6 +74,7 @@ button {
     padding: 10px;
     text-align: center;
     border-radius: 8px;
+    width: 200px; /* Set a fixed width for cards */
 }
 
 .member-card img {
@@ -75,6 +87,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+    position: relative; /* Keeps the footer at the bottom of the page */
 }
 
 footer p {
