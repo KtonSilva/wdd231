@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Esmeraldas Mining Services",
+        "address": "Calle 1 #2-3, Muzo, Boyacá",
+        "phone": "+57 321 456 7890",
+        "website": "https://muzocolombia.co",
+        "membershipLevel": "Gold",
+        "image": "assets/esmeraldas.jpg"
+    },
+    {
+        "name": "Green Mountain Tours",
+        "address": "Carrera 4 #5-6, Muzo, Boyacá",
+        "phone": "+57 322 867 8901",
+        "website": "https://greenmountaintours.com",
+        "membershipLevel": "Silver",
+        "image": "assets/green_mountain.jpg"
+    },
+    {
+        "name": "Muzo Miners Association",
+        "address": "Avenida #7-9, Muzo, Boyacá",
+        "phone": "+57 323 678 9012",
+        "website": "https://muzominers.org",
+        "membershipLevel": "Gold",
+        "image": "assets/miners_association.jpg"
+    },
+    {
+        "name": "Esmeralda Cacao",
+        "address": "Calle 10 #11-12, Muzo, Boyacá",
+        "phone": "+57 324 789 0123",
+        "website": "https://muzocolombia.ca",
+        "membershipLevel": "Bronze",
+        "image": "assets/esmeralda_cacao.jpg"
+    }
+]
+

@@ -1,12 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+    let members = []; // Store members globally
+
     // Fetch members data from the JSON file
     async function fetchMembers() {
         try {
-            const response = await fetch('data/members.json');
-            const members = await response.json();
+            const response = await fetch('data/members.json'); // Ensure path is correct
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            members = await response.json();
             displayMembers(members);
         } catch (error) {
             console.error("Error fetching members:", error);
+            document.getElementById('directory').innerHTML = '<p>No members to display.</p>';
         }
     }
 
@@ -15,9 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const directory = document.getElementById('directory');
         directory.className = view;
 
+        if (members.length === 0) {
+            directory.innerHTML = '<p>No members to display.</p>';
+            return;
+        }
+
         directory.innerHTML = members.map(member => `
             <div class="member-card">
-                <img src="images/${member.image}" alt="${member.name}">
+                <img src="${member.image}" alt="${member.name}">
                 <h2>${member.name}</h2>
                 <p>${member.address}</p>
                 <p><strong>Phone:</strong> ${member.phone}</p>
@@ -28,11 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Switch view between grid and list
     document.getElementById('grid-view').addEventListener('click', () => {
-        fetchMembers().then(() => displayMembers(window.members, 'grid'));
+        displayMembers(members, 'grid');
     });
 
     document.getElementById('list-view').addEventListener('click', () => {
-        fetchMembers().then(() => displayMembers(window.members, 'list'));
+        displayMembers(members, 'list');
     });
 
     // Set the copyright year and last modified date
