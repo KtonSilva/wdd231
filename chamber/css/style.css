@@ -44,6 +44,72 @@ button {
     margin: 0 10px;
 }
 
+/* Join Card Styling */
+
+main.container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.form-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+form input, form select, form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.membership-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: blue;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
 /* Hero Image Styling */
 .hero img {
     width: 100%;
@@ -142,3 +208,32 @@ footer p {
     gap: 20px; /* Space between spotlight cards */
     flex-wrap: wrap; /* Allow wrapping of items */
 }
+
+/* Animations for Membership Cards */
+.membership-cards .card {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    margin: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.membership-cards .card:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.membership-cards .card {
+    animation: fadeIn 1s forwards;
+}
+

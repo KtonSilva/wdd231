@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recife Chamber of Commerce Directory Page">
+    <meta name="author" content="Kleyton L Silva">
+    <meta property="og:title" content="Recife Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/chamber.jpg">
+    <meta property="og:url" content="https://ktonsilva.github.io/wdd231/chamber/">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Thank You</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="form-card">
+        <h1>Thank You for Joining!</h1>
+        <p>We appreciate your membership application. Here is the information you provided:</p>
+
+        <ul>
+            <li><strong>First Name:</strong> <span id="firstName"></span></li>
+            <li><strong>Last Name:</strong> <span id="lastName"></span></li>
+            <li><strong>Email:</strong> <span id="email"></span></li>
+            <li><strong>Phone:</strong> <span id="phone"></span></li>
+            <li><strong>Organization:</strong> <span id="organization"></span></li>
+            <li><strong>Submission Date:</strong> <span id="timestamp"></span></li>
+        </ul>
+    </section>
+    </main>
+
+    <footer>
+        <p>Timbuktu Chamber of Commerce | 10 Rue De La Paix | Timbuktu, Mali</p>
+        <p>&copy; <span id="currentYear"></span> Timbuktu Chamber of Commerce</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        // Retrieve query parameters and display form data
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('firstName').textContent = urlParams.get('firstName');
+        document.getElementById('lastName').textContent = urlParams.get('lastName');
+        document.getElementById('email').textContent = urlParams.get('email');
+        document.getElementById('phone').textContent = urlParams.get('phone');
+        document.getElementById('organization').textContent = urlParams.get('organization');
+        document.getElementById('timestamp').textContent = urlParams.get('timestamp');
+    </script>
+</body>
+
+</html>

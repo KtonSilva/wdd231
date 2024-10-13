@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recife Chamber of Commerce Directory Page">
+    <meta name="author" content="Kleyton L Silva">
+    <meta property="og:title" content="Recife Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/chamber.jpg">
+    <meta property="og:url" content="https://ktonsilva.github.io/wdd231/chamber/">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/join.js"></script>
+    <title>Join the Chamber</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+    
+        <!-- Form Card -->
+        <section class="form-card">
+            <h2>Join the Chamber of Commerce</h2>
+            <form action="thankyou.html" method="get">
+                <label>
+                    First Name:
+                    <input type="text" name="first-name" required autocomplete="given-name" title="Enter your first name">
+                </label>
+                <label>
+                    Last Name:
+                    <input type="text" name="last-name" required autocomplete="family-name" title="Enter your last name">
+                </label>
+                <label>
+                    Organizational Title:
+                    <input type="text" name="organization-title" autocomplete="organization-title" 
+                           pattern="[a-zA-Z\s-]{7,}" title="Enter your title (min 7 letters, spaces, or hyphens)">
+                </label>
+                <label>
+                    Email:
+                    <input type="email" name="email" required placeholder="example@example.com" title="Enter a valid email">
+                </label>
+                <label>
+                    Phone Number:
+                    <input type="tel" name="phone" required autocomplete="tel" title="Enter your mobile number">
+                </label>
+                <label>
+                    Organization Name:
+                    <input type="text" name="organization" required autocomplete="organization" title="Enter organization name">
+                </label>
+                <label>
+                    Membership Level:
+                    <select name="membership-level" required>
+                        <option value="NP">NP Membership (Non-Profit)</option>
+                        <option value="Bronze">Bronze Membership</option>
+                        <option value="Silver">Silver Membership</option>
+                        <option value="Gold">Gold Membership</option>
+                    </select>
+                </label>
+                <label>
+                    Organization Description:
+                    <textarea name="description" rows="4" title="Describe your organization"></textarea>
+                </label>
+                <input type="hidden" name="timestamp" id="timestamp">
+                <input type="submit" value="Join Now">
+            </form>
+        </section>
+    </main>
+    
+        <!-- Membership Cards -->
+        <div class="membership-cards">
+            <div class="card">
+                <h3>NP Membership</h3>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>Bronze Membership</h3>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>Silver Membership</h3>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>Gold Membership</h3>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+
+    <footer>
+        <p>Timbuktu Chamber of Commerce | 10 Rue De La Paix | Timbuktu, Mali</p>
+        <p>&copy; <span id="currentYear"></span> Timbuktu Chamber of Commerce</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
