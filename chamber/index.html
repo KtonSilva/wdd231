@@ -12,7 +12,6 @@
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://api.openweathermap.org/data/2.5/weather?APPID=YOUR_API_KEY&units=metric" defer></script>
     <script src="js/home.js" defer></script>
     <title>Chamber of Commerce Home</title>
 </head>
@@ -45,12 +44,16 @@
 
         <section class="weather">
             <h2>Current Weather</h2>
+            <div class="membership-cards">
+            <div class="card">
             <div id="weather-info">
                 <p id="weather-description"></p>
                 <p id="temperature"></p>
             </div>
             <h3>3-Day Forecast</h3>
             <div id="forecast"></div>
+            </div>
+            </div>
         </section>
 
         <section class="spotlights">
@@ -66,5 +69,30 @@
         <p>&copy; <span id="currentYear"></span> Timbuktu Chamber of Commerce</p>
         <p>Last Modified: <span id="lastModified"></span></p>
     </footer>
+
+    <script>
+        const apiKey = '22aec790c974b7d195231f9a6eb8c67b';
+        const city = 'Recife'; // Cidade alvo
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=en`;
+
+        async function fetchWeather() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('Unable to fetch weather data.');
+
+                const data = await response.json();
+                const description = data.weather[0].description;
+                const temperature = data.main.temp;
+
+                document.getElementById('weather-description').textContent = `Condition: ${description}`;
+                document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
+            } catch (error) {
+                document.getElementById('weather-info').textContent = error.message;
+            }
+        }
+
+        fetchWeather();
+    </script>
+
 </body>
 </html>
