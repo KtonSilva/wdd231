@@ -32,12 +32,12 @@
         "image": "assets/esmeralda_cacao.jpg"
     },
     {
-        "name": "Timbuktu Digital Agency",
+        "name": "Recife Digital Agency",
         "address": "Rue 12 #15-20, Recife, Brazil",
         "phone": "+223 654 321 987",
-        "website": "https://timbuktudigital.com",
+        "website": "https://recifedigital.com",
         "membershipLevel": "Gold",
-        "image": "assets/timbuktu_digital.jpg"
+        "image": "assets/recife_digital.jpg"
     },
     {
         "name": "Sahara Consulting Group",
