@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Local Events and Attractions in Recife">
+    <meta name="author" content="Kleyton L Silva">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Discover Recife</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="discover-page">
+        <aside class="sidebar">
+            <h2>Welcome Back!</h2>
+            <div id="visit-message"></div>
+            <h3>Upcoming Events</h3>
+            <ul>
+                <li>Business Networking - October 25</li>
+                <li>Community Clean-Up - November 1</li>
+                <li>Chamber Annual Gala - December 15</li>
+            </ul>
+            <h3>Demographics</h3>
+            <p>Recife population: 1.5 million</p>
+            <p>Average temperature: 25°C</p>
+        </aside>
+
+        <section class="main-content">
+            <h2>Local Attractions</h2>
+            <div class="gallery">
+                <img src="images/local1.jpg" alt="Local Attraction 1" loading="lazy">
+                <img src="images/local2.jpg" alt="Local Attraction 2" loading="lazy">
+                <img src="images/local3.jpg" alt="Local Attraction 3" loading="lazy">
+                <img src="images/local4.jpg" alt="Local Attraction 4" loading="lazy">
+                <img src="images/local5.jpg" alt="Local Attraction 5" loading="lazy">
+                <img src="images/local6.jpg" alt="Local Attraction 6" loading="lazy">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Recife Chamber of Commerce | Recife Antigo | Brazil</p>
+        <p>&copy; <span id="currentYear"></span> Recife Chamber of Commerce</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        // Store the current date and retrieve the last visit date
+        const lastVisit = localStorage.getItem('lastVisit');
+        const currentVisit = Date.now();
+        const visitMessage = document.getElementById('visit-message');
+
+        if (!lastVisit) {
+            visitMessage.textContent = "Welcome! Let us know if you have any questions.";
+        } else {
+            const daysSinceLastVisit = Math.floor((currentVisit - lastVisit) / (1000 * 60 * 60 * 24));
+            if (daysSinceLastVisit < 1) {
+                visitMessage.textContent = "Back so soon! Awesome!";
+            } else {
+                visitMessage.textContent = `You last visited ${daysSinceLastVisit} ${daysSinceLastVisit === 1 ? 'day' : 'days'} ago.`;
+            }
+        }
+        localStorage.setItem('lastVisit', currentVisit);
+
+        // Update the current year and last modified date in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
+
+        // Image hover effect (CSS class can be added for effect)
+        const galleryImages = document.querySelectorAll('.gallery img');
+        galleryImages.forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.transform = 'scale(1.05)'; // Scale effect on hover
+            });
+            img.addEventListener('mouseleave', () => {
+                img.style.transform = 'scale(1)'; // Reset scale effect
+            });
+        });
+    </script>
+</body>
+</html>

@@ -257,3 +257,51 @@ footer p {
     animation: fadeIn 1s forwards;
 }
 
+/* Discover Page Styles */
+.discover-page {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Sidebar and main content */
+    gap: 20px; /* Space between sidebar and main content */
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #ffffff; /* White background for sidebar */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    background-color: #ffffff; /* White background for main content */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 10px; /* Space between images */
+}
+
+.gallery img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .discover-page {
+        grid-template-columns: 1fr; /* Single column layout on mobile */
+    }
+
+    .sidebar {
+        order: 1; /* Sidebar first in mobile view */
+    }
+
+    .main-content {
+        order: 2; /* Main content second in mobile view */
+    }
+}
