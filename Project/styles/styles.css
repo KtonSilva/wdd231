@@ -92,7 +92,7 @@ nav {
     display: block;
 }
 
-.hero h1 {
+.hero p h1 {
     position: absolute;
     top: 8%; /* Vertically center */
     left: 50%; /* Horizontally center */
