@@ -1,47 +1,44 @@
-// Add click event to the hamburger icon
 document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
-    // Toggle the menu visibility on click
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('show');
     });
 
-    // Load the current year dynamically
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Call the function to load games from the RAWG API
-    loadGamesFromAPI();
+    loadGamesFromAPI();  // Carregar jogos da API
 });
 
-// Function to fetch games from the RAWG API
+// Função para buscar jogos da API RAWG
 async function loadGamesFromAPI() {
-    const apiKey = 'e58fe9955caa4d488a0685411a25bc80';  // Replace with your actual API key
+    const apiKey = 'e58fe9955caa4d488a0685411a25bc80';  // Substitua pela sua chave de API
     const url = `https://api.rawg.io/api/games?key=${apiKey}&page_size=4`;
 
     try {
         const response = await fetch(url);
         const data = await response.json();
-        displayGames(data.results);
+        displayGames(data.results);  // Exibir jogos
     } catch (error) {
         console.error('Error fetching games:', error);
     }
 }
 
-// Function to display the fetched games
+// Função para exibir jogos
 function displayGames(games) {
     const gameList = document.getElementById('game-list');
-    gameList.innerHTML = '';  // Clear existing content
+    gameList.innerHTML = '';  // Limpar conteúdo existente
 
     games.forEach(game => {
-        const gameItem = document.createElement('div');
-        gameItem.innerHTML = `
+        const card = document.createElement('div');
+        card.classList.add('game-card');
+        card.innerHTML = `
+            <img src="${game.background_image || 'images/custom.jpg'}" alt="${game.name}">
             <h3>${game.name}</h3>
             <p>Released: ${game.released}</p>
             <p>Rating: ${game.rating}</p>
-            <img src="${game.background_image}" alt="${game.name}" width="300">
         `;
-        gameList.appendChild(gameItem);
+        gameList.appendChild(card);
     });
 }
