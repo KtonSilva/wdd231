@@ -258,11 +258,20 @@ footer p {
 }
 
 /* Discover Page Styles */
+
+.page-title {
+    text-align: center; /* Centraliza horizontalmente */
+    margin-top: 20px;   /* Espaçamento superior */
+    font-size: 2rem;    /* Tamanho do texto */
+    color: #333;
+}
+
 .discover-page {
     display: grid;
     grid-template-columns: 1fr 3fr; /* Sidebar and main content */
     gap: 20px; /* Space between sidebar and main content */
     padding: 20px;
+    align-items: start;
 }
 
 .sidebar {
