@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gamers On Reviews">
+    <meta name="author" content="Kleyton L Silva">
+    <meta property="og:title" content="Gamers On Reviews">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ktonsilva.github.io/wdd231/Project/images/Project.jpg">
+    <meta property="og:url" content="https://ktonsilva.github.io/wdd231/Project/">
+    <title>Gamers On</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script type="module" src="scripts/app.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="profile">
+                <img src="images/gamerson.jpg" alt="Profile image">
+                <h1>Gamers On</h1>
+            </div>
+            <button class="hamburger">&#9776;</button> <!-- Hamburger button for mobile navigation -->
+            <ul class="nav-links"> <!-- Navigation links -->
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="submit-review.html">Submit Review</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Discover Top-Rated Games</h1>
+        <p>Aggregated reviews and user ratings for the best games of 2024.</p>
+        <img src="images/hero.jpg" alt="Gamers On">
+    </section>
+
+    <section class="featured-games">
+        <h2>Featured Games</h2>
+        <div id="game-list"></div> <!-- Placeholder for dynamically loaded game data -->
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Gamers On Review Aggregator</p>
+        <a href="attributions.html" class="footer-link">Attributions</a>
+    </footer>
+</body>
+</html>
