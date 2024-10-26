@@ -167,11 +167,33 @@ form input, form select, form textarea {
 
 /* Grid View Styling */
 #reviews.grid {
-    display: flex; /* Change to flexbox */
-    flex-wrap: wrap; /* Allow wrapping of items */
-    justify-content: center; /* Center items */
-    gap: 20px; /* Space between items */
-    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* List View Styling */
+#reviews.list {
+    display: block;
+    text-align: center;
+}
+
+/* Styling for Game Cards */
+.game-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 /* List View Styling */

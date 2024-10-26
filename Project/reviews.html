@@ -1,49 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Gamers On Reviews">
-        <meta name="author" content="Kleyton L Silva">
-        <meta property="og:title" content="Gamers On Reviews">
-        <meta property="og:type" content="website">
-        <meta property="og:image" content="https://ktonsilva.github.io/wdd231/Project/images/Project.jpg">
-        <meta property="og:url" content="https://ktonsilva.github.io/wdd231/Project/">
-        <title>Gamers On</title>
-        <link rel="icon" href="images/favicon.ico">
-        <link rel="stylesheet" href="styles/styles.css">
-        <script type="module" src="scripts/app.js"></script>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="profile">
-                    <img src="images/gamerson.jpg" alt="Profile image">
-                    <h1>Gamers On</h1>
-                </div>
-                <button class="hamburger">&#9776;</button>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="reviews.html" class="active">Reviews</a></li>
-                    <li><a href="submit-review.html">Submit Review</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main class="container">
-            <h1>Gamers On Reviews</h1>
-            <div id="reviews-container">
-                <button id="grid-view">Grid View</button>
-                <button id="list-view">List View</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gamers On Reviews">
+    <meta name="author" content="Kleyton L Silva">
+    <meta property="og:title" content="Gamers On Reviews">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ktonsilva.github.io/wdd231/Project/images/Project.jpg">
+    <meta property="og:url" content="https://ktonsilva.github.io/wdd231/Project/">
+    <title>Gamers On</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script type="module" src="scripts/app.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="profile">
+                <img src="images/gamerson.jpg" alt="Profile image">
+                <h1>Gamers On</h1>
             </div>
-            <section id="reviews" class="grid">
-                <!-- Games cards will be dynamically loaded here -->
-            </section>
-        </main>
+            <button class="hamburger">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reviews.html" class="active">Reviews</a></li>
+                <li><a href="submit-review.html">Submit Review</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Gamers On Reviews</h1>
+
+        <div id="reviews-container">
+            <button id="grid-view">Grid View</button>
+            <button id="list-view">List View</button>
+        </div>
+
+        <section id="reviews" class="grid">
+            <!-- Game cards will be dynamically loaded here -->
+        </section>
+    </main>
 
     <footer>
         <p>&copy; <span id="year"></span> Gamers On Review Aggregator</p>
         <a href="attributions.html" class="footer-link">Attributions</a>
     </footer>
 
+    <script>
+        // Wait for DOM content to load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadGames(); // Load and display games from JSON
+
+            const gridViewButton = document.getElementById('grid-view');
+            const listViewButton = document.getElementById('list-view');
+            const reviewsSection = document.getElementById('reviews');
+
+            // Toggle between grid and list views
+            gridViewButton.addEventListener('click', () => {
+                reviewsSection.classList.add('grid');
+                reviewsSection.classList.remove('list');
+            });
+
+            listViewButton.addEventListener('click', () => {
+                reviewsSection.classList.add('list');
+                reviewsSection.classList.remove('grid');
+            });
+        });
+
+        // Function to load game data from JSON
+        async function loadGames() {
+            try {
+                const response = await fetch('data/games.json');
+                const games = await response.json();
+                displayGames(games);
+            } catch (error) {
+                console.error('Error loading game data:', error);
+            }
+        }
+
+        // Function to display game data as cards
+        function displayGames(games) {
+            const reviewsSection = document.getElementById('reviews');
+            reviewsSection.innerHTML = ''; // Clear any existing content
+
+            games.forEach(game => {
+                const card = document.createElement('div');
+                card.classList.add('game-card');
+                card.innerHTML = `
+                    <img src="${game.image || 'images/custom.jpg'}" alt="${game.name}">
+                    <h3>${game.name}</h3>
+                    <p>Rating: ${game.rating}</p>
+                `;
+                reviewsSection.appendChild(card);
+            });
+        }
+    </script>
 </body>
 </html>
