@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Function to fetch games from the RAWG API
 async function loadGamesFromAPI() {
     const apiKey = 'e58fe9955caa4d488a0685411a25bc80';  // Replace with your actual API key
-    const url = `https://api.rawg.io/api/games?key=${apiKey}&page_size=5`;
+    const url = `https://api.rawg.io/api/games?key=${apiKey}&page_size=4`;
 
     try {
         const response = await fetch(url);
