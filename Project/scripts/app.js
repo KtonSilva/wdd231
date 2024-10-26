@@ -1,38 +1,47 @@
-// Wait for the DOM content to fully load
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger'); // Select hamburger button
-    const navLinks = document.querySelector('.nav-links'); // Select navigation links
-    
-    // Add click event to the hamburger button
+// Add click event to the hamburger icon
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Toggle the menu visibility on click
     hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('show'); // Toggle the 'show' class to display the menu
-        console.log('Hamburger clicked!'); // Log for debugging
+        navLinks.classList.toggle('show');
     });
 
-    // Dynamically load the current year into the footer
+    // Load the current year dynamically
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Load game data from JSON
-    loadGames();
+    // Call the function to load games from the RAWG API
+    loadGamesFromAPI();
 });
 
-// Function to load game data
-async function loadGames() {
+// Function to fetch games from the RAWG API
+async function loadGamesFromAPI() {
+    const apiKey = 'e58fe9955caa4d488a0685411a25bc80';  // Replace with your actual API key
+    const url = `https://api.rawg.io/api/games?key=${apiKey}&page_size=5`;
+
     try {
-        const response = await fetch('data/games.json'); // Fetch game data from JSON file
-        const games = await response.json(); // Parse JSON data
-        displayGames(games); // Display game data
+        const response = await fetch(url);
+        const data = await response.json();
+        displayGames(data.results);
     } catch (error) {
-        console.error('Error loading game data:', error); // Log error if fetching fails
+        console.error('Error fetching games:', error);
     }
 }
 
-// Function to display game data
+// Function to display the fetched games
 function displayGames(games) {
-    const gameList = document.getElementById('game-list'); // Select game list element
+    const gameList = document.getElementById('game-list');
+    gameList.innerHTML = '';  // Clear existing content
+
     games.forEach(game => {
-        const gameItem = document.createElement('div'); // Create a new div for each game
-        gameItem.innerHTML = `<h3>${game.name}</h3><p>Rating: ${game.rating}</p>`; // Set inner HTML with game data
-        gameList.appendChild(gameItem); // Append game item to the game list
+        const gameItem = document.createElement('div');
+        gameItem.innerHTML = `
+            <h3>${game.name}</h3>
+            <p>Released: ${game.released}</p>
+            <p>Rating: ${game.rating}</p>
+            <img src="${game.background_image}" alt="${game.name}" width="300">
+        `;
+        gameList.appendChild(gameItem);
     });
 }
