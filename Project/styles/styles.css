@@ -177,6 +177,8 @@ form input, form select, form textarea {
 #reviews.list {
     display: block;
     text-align: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 /* Styling for Game Cards */
