@@ -175,15 +175,16 @@ form input, form select, form textarea {
 
 /* List View Styling */
 #reviews.list {
-    display: flex;               
+    display: flex;              
     flex-direction: column;      
     align-items: center;         
-    justify-content: center;     
-    gap: 20px;                  
+    justify-content: flex-start; 
+    gap: 20px;                   
     padding: 20px;
     min-height: 100vh;           
-    box-sizing: border-box;
+    box-sizing: border-box;      
 }
+
 
 /* Styling for Game Cards */
 .game-card {
@@ -200,13 +201,6 @@ form input, form select, form textarea {
     width: 100%;
     height: auto;
     border-radius: 8px;
-}
-
-/* List View Styling */
-#reviews.list {
-    display: block;
-    padding: 20px;
-    text-align: center; /* Center content in list view */
 }
 
 /* Footer styling */
