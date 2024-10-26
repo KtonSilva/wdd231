@@ -82,7 +82,7 @@ nav {
 .hero {
     position: relative; /* Set the container as the reference for absolute positioning */
     width: 100%;
-    height: 400px; /* Adjust the height as needed */
+    height: 300px; /* Adjust the height as needed */
     overflow: hidden;
 }
 
@@ -127,7 +127,7 @@ nav {
     border-radius: 8px;
     margin: 20px auto; /* Center card */
     max-width: 400px; /* Limit card width */
-    bottom: 10%;
+    bottom: 100px;
 }
 
 /* Form Card Styling */
